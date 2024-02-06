@@ -1,0 +1,256 @@
+<DOCTYPE html>
+    <html="en">
+    <head>
+        <meta name="viewport" contentwidth=device-, initial-scale=.0">
+       <title>Contact</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Protest+Strike&display=swap" rel="stylesheet">  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Oswald:wght@300&family=Protest+Strike&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+     <style>
+        @font-face {
+  font-family: 'SF-Pro-Display-Regular';
+  src: url('./SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+            body {
+                background-color: rgb(0, 0, 0);
+                background-image: url(jd.jpg);
+                background-position: center;
+                background-size: contain;
+                display: flex;
+                color: #fff;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 20px;
+                position: relative;
+            }
+            h3 {
+                font-family: 'Protest Strike' !important;
+                font-size: 45px;
+                letter-spacing: 0.1cap;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+                .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                height: 350px;
+                width: 400px;
+                position: relative;
+                
+                background-color: rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 25px;
+                padding: 15px;
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                backdrop-filter: blur(10px) saturate(150%);
+                -webkit-backdrop-filter: blur(5px) saturate(150%);
+                background-blend-mode: overlay;
+                transition: transform 0.3s ease-out, visibility 0s 0.3s;
+}
+
+.containerOverlap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 350px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(5px) saturate(150%);
+  background-blend-mode: overlay;
+  transition: transform 0.3s ease-in, visibility 0s 0.3s;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.containerOverlap p {
+  font-family: 'Roboto';
+  font-size: 35px;
+}
+
+.container h3 {
+  margin-top: 0;
+}
+
+            input, textarea {
+                background-color: rgba(255, 255, 255, 0.3);
+                border: none;
+                border-radius: 8px;
+                padding: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+                color: #fff;
+                font-family: 'SF-Pro-Display-Regular';
+                font-size: 15px;
+                letter-spacing: 0.1cap;
+                box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+                backdrop-filter: blur(5px) saturate(150%);
+                -webkit-backdrop-filter: blur(5px) saturate(150%);
+                background-blend-mode: overlay;
+                box-sizing: border-box;
+            }
+            button {
+                background: #000;
+                color: #fff;
+                border: none;
+                width: 150px;
+                padding: 5px 20px;
+                font-family: 'Poppins';
+                font-size: 15px;
+                border-radius: 15px;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                cursor: pointer;
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                backdrop-filter: blur(5px) saturate(150%);
+                -webkit-backdrop-filter: blur(5px) saturate(150%);
+                background-blend-mode: overlay;
+                transition: transform 0.3s ease-out;
+            }
+            input::placeholder, textarea::placeholder {
+                color: #fff;
+            }
+            input:focus, textarea:focus {
+                outline: none;
+            }
+
+            .container.flip {
+                position: relative;
+                transform-origin: 50% 50%;
+                transform: rotateY(180deg);
+                visibility: hidden;
+            }
+            .containerOverlap.flip{
+                
+                transform: rotateY(180deg);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                height: 350px;
+                width: 400px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 25px;
+                padding: 15px;
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                backdrop-filter: blur(10px) saturate(150%);
+                -webkit-backdrop-filter: blur(5px) saturate(150%);
+                background-blend-mode: overlay;
+                visibility: visible;
+            }
+
+            img {
+              width: 30%;
+              position: absolute;
+              top: 0%;
+              left: 36%;
+                }
+                @media only screen and (max-width: 768px) {
+  body {
+    font-size: 36px;
+  }
+  .container,
+  .containerOverlap {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  input, textarea, button {
+    font-size: 54px;
+  }
+  button {
+    width: 100%;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  img {
+    width: 50%;
+    left: 25%;
+  }
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>ADD YOUR FACT</h3>
+                <input type="text" id="name" placeholder="Your name" required>
+                <input type="email" id="emailId" placeholder="Email id" required>
+                <textarea id="fact" rows="4" placeholder="Share your knowledge here"></textarea>
+                <button type="submit">Send</button>
+             </form>
+        </div>
+
+        <div class="containerOverlap">
+          <h3><img src="tick.png"></h3>
+          <p>Thank you for sharing! The admin will check and add the fact with your name as credit.</p>
+        </div>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail() {
+                Email.send({
+                    Host : "smtp.elasticemail.com",
+                    Username : "sknaimuddin234@gmail.com",
+                    Password : "4A8557D6AA689B6351B2662DA0E5D979EB4B",
+                    To : 'killalltitans234@gmail.com',
+                    From : document.getElementById("emailId").value,
+                    Subject : "New Fact",
+                    Body : "Name: " + document.getElementById("name").value
+                    + "<br> Email: " + document.getElementById("emailId").value
+                    + "<br> Fact: " + document.getElementById("fact").value
+                }).then(
+                    message => alert("Thank you for  sharing! The admin will check and add the fact with your name as credit."),
+                );
+            }
+            
+            const sendButton = document.querySelector('button[type="submit"]');
+sendButton.addEventListener('click', () => {
+  const container = document.querySelector('.container');
+  const containerOverlap = document.querySelector('.containerOverlap');
+  container.classList.add('flip');
+  containerOverlap.classList.add('flip');
+  // You can also add a delay before resetting the form
+  setTimeout(() => {
+    document.querySelector('form').reset();
+  }, 10000000000);
+});
+
+
+        </script>
+    </body>
+    </html>

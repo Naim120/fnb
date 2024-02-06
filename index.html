@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FnB Facts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Protest+Strike&display=swap" rel="stylesheet">  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Oswald:wght@300&family=Protest+Strike&display=swap" rel="stylesheet">
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-color: #f5f5f5;
+  margin: 20px;
+}
+
+.fact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  transform: translateY(50px);
+}
+
+#fact-box-container {
+  position: relative;
+  width: 100%;
+}
+
+#fact-box {
+  height: 200px; /* Set a fixed height */
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(5px) saturate(150%);
+  background-blend-mode: overlay;
+  overflow-y: auto; /* Enable scrolling */
+  scrollbar-width: 10px;
+}
+#fact-box::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar track */
+}
+#fact-box::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+#fact-box::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#fact-box::-webkit-scrollbar-button {
+  display: flex;
+}
+
+#displayed-fact {
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  font-family: 'Oswald';
+  font-size: 20px;
+}
+h2 {
+  color: #fff;
+  font-family: 'Protest Strike' !important;
+  font-size: 50px;
+  letter-spacing: 0.1cap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+button {
+  background: linear-gradient(to right, #3498db, #d287f0);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Concert One';
+  font-size: 26px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(5px) saturate(150%);
+  -webkit-backdrop-filter: blur(5px) saturate(150%);
+  background-blend-mode: overlay;
+}
+
+button:hover {
+  background-position: left bottom;
+}
+
+@media (max-width: 768px) {
+  button {
+    top: auto;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fact-container #fact-box {
+    scale: 2.0;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+  <h2>Did you know?</h2>
+  <div class="fact-container">
+    <div id="fact-box">
+      <p id="displayed-fact"></p>
+    </div>
+    <button id="shuffle-button">Have A Drink</button>
+  </div>
+
+  <script>
+    // Replace these with your actual facts
+    const facts = [
+      "Fact 1 goes here",
+      "Fact 2 goes here cjhnweicfhksdfhjkfsdjkfnsdksnkcvnsm,cvn xm,cv dm,scnksdfjwevkljnfvijsdifjsdkfjdkfsdkdfghdfghdfjghdfgvdfjkghdkgvjdkghdfkghfjkdghfjkghjkfhgdfjkghdfjkghdfkghfjghdfgjdfgjdfklgjdfkgjdfkgjdklgjdfgjdfkgdfkf jgkdfgfgjdfk jdj kj djdjgj j kj j jg kldjgdfjgkfjgkdfjgkjflksfokfsdkfdlfmkslfl;sfjkosfjgbasjjcasj kopakkjkbnlvkislkdbnkajkl;fksihjsdmkjsskjhnfkzjxlfmsbcsdkliclskfhslgmnxoivhdfnvishdfoijfksdnlfjsdiofjosj",
+      "Fact 3 goes here",
+      // ... more facts
+    ];
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+
+    function displayRandomFact() {
+      shuffleArray(facts);
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      const selectedFact = facts[randomIndex];
+      document.getElementById("displayed-fact").textContent = selectedFact;
+    }
+
+    const shuffleButton = document.getElementById("shuffle-button");
+    shuffleButton.addEventListener("click", displayRandomFact);
+
+    displayRandomFact(); // Show a random fact on page load
+  </script>
+</body>
+</html>
