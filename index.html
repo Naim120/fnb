@@ -77,6 +77,8 @@ body {
   word-wrap: break-word;
   font-family: 'Oswald';
   font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 h2 {
   color: #fff;
@@ -112,11 +114,21 @@ button:hover {
     font-size: 20px;
   }
   #fact-box {
-        width: 80vw; /* Change this to 100% for mobile devices */
-      }
+  width: 80vw;
+  padding: 8px;
+    }
+
+#fact-box::-webkit-scrollbar-button {
+  display: block;
+}
       h2 {
         font-size: 40px;
       }
+      #displayed-fact {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 }
 
 
