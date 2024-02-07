@@ -1,7 +1,7 @@
 <DOCTYPE html>
     <html="en">
     <head>
-        <meta name="viewport" contentwidth=device-, initial-scale=.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Contact</title>
        <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
                 background-color: rgb(0, 0, 0);
                 background-image: url(jd.jpg);
                 background-position: center;
-                background-size: contain;
+                background-size: auto;
                 display: flex;
                 color: #fff;
                 flex-direction: column;
@@ -53,7 +53,8 @@
                 height: 350px;
                 width: 400px;
                 position: relative;
-                
+                top: 30%;
+                left: 5%;
                 background-color: rgba(255, 255, 255, 0.15);
                 border: 1px solid rgba(255, 255, 255, 0.15);
                 border-radius: 25px;
@@ -62,7 +63,7 @@
                 backdrop-filter: blur(10px) saturate(150%);
                 -webkit-backdrop-filter: blur(5px) saturate(150%);
                 background-blend-mode: overlay;
-                transition: transform 0.3s ease-out, visibility 0s 0.3s;
+                transition: transform 1s, visibility 0s 0.5s;
 }
 
 .containerOverlap {
@@ -73,10 +74,9 @@
   text-align: center;
   height: 350px;
   width: 400px;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 0%;
   left: 50%;
-  transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 25px;
@@ -85,14 +85,14 @@
   backdrop-filter: blur(10px) saturate(150%);
   -webkit-backdrop-filter: blur(5px) saturate(150%);
   background-blend-mode: overlay;
-  transition: transform 0.3s ease-in, visibility 0s 0.3s;
   visibility: hidden;
+  transition: transform 0.3s, visibility 0s 0.3s;
   z-index: 1;
 }
 
 .containerOverlap p {
   font-family: 'Roboto';
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .container h3 {
@@ -143,13 +143,13 @@
 
             .container.flip {
                 position: relative;
+                top: 30%;
+                left: 5%;
                 transform-origin: 50% 50%;
-                transform: rotateY(180deg);
+                transform: rotateY(360deg);
                 visibility: hidden;
             }
             .containerOverlap.flip{
-                
-                transform: rotateY(180deg);
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -157,10 +157,10 @@
                 text-align: center;
                 height: 350px;
                 width: 400px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                position: relative;
+                top: -20%;
+                left: 5%;
+                transform-origin: 50% 50%;
                 background-color: rgba(255, 255, 255, 0.15);
                 border: 1px solid rgba(255, 255, 255, 0.15);
                 border-radius: 25px;
@@ -170,6 +170,8 @@
                 -webkit-backdrop-filter: blur(5px) saturate(150%);
                 background-blend-mode: overlay;
                 visibility: visible;
+                transform: rotateY(360deg);
+                transition: transform 1s, visibility 0s 0s;
             }
 
             img {
@@ -201,6 +203,54 @@
     width: 50%;
     left: 25%;
   }
+}
+
+@media only screen and (max-width: 768px) { 
+  body { 
+    font-size: 36px;
+    padding: 10px;
+    margin: 10px;
+    background-size: auto;
+    background-position-x: 44%;
+    background-position-y: 20%;
+       }
+
+input, textarea, button {
+                font-size: 16px;
+                padding: 8px;
+                        }
+
+.container {
+  width: 80vw;
+  position: absolute;
+  left: 25%;
+}
+.containerOverlap {
+  width: 80vw;
+}
+.container.flip {
+  width: 80vw;
+  position: absolute;
+  top: 23%;
+  left: 5%;
+}
+.containerOverlap.flip {
+  width: 80vw;
+  height: 50vh;
+  position: relative;
+  left: auto;
+  top: auto;
+}
+img {
+              width: 20%;
+              position: absolute;
+              top: 15%;
+              left: 40%;
+}
+.containerOverlap p {
+  font-family: 'Roboto';
+  font-size: 20px;
+}
 }
         </style>
     </head>
