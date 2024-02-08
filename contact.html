@@ -48,7 +48,17 @@
                 margin: 20px;
                 position: relative;
                 transform-origin: center center;
+                margin: 0;
             }
+
+            .parent {
+                display: flex;
+                justify-content: center;
+                height: 400px;
+                width: auto;
+                flex-direction: row;
+                position: relative;
+                    }
             h3 {
                 font-family: 'Protest Strike' !important;
                 font-size: 45px;
@@ -57,6 +67,44 @@
                 margin-bottom: 20px;
             }
 
+            .back-button {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    flex-direction: row;
+                    width: 100px;
+                    top: -5%;
+                    left: 0%;
+                    background: rgba(255, 255, 255, 0.15);
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    border-radius: 8px;
+                    padding: 10px 20px;
+                    color: #fff;
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 15px;
+                    backdrop-filter: blur(100px) saturate(150%);
+                    -webkit-backdrop-filter: blur(50px) saturate(150%);
+                    background-blend-mode: overlay;
+                    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                    cursor: pointer;
+                    transition: transform 0.3s ease-out;
+                    gap: 5px;
+                          }
+
+.back-button:hover {
+  transform: translateY(-2px);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
                 .container {
                 display: flex;
                 flex-direction: column;
@@ -64,10 +112,10 @@
                 align-items: center;
                 text-align: center;
                 height: 350px;
-                width: 400px;
-                position: relative;
-                top: 30%;
-                left: 5%;
+                width: auto;
+                position: absolute;
+                top: 10%;
+                left: 0%;
                 background-color: rgba(255, 255, 255, 0.15);
                 border: 1px solid rgba(255, 255, 255, 0.15);
                 border-radius: 25px;
@@ -79,6 +127,16 @@
                 transition: transform 1s, visibility 0s 0.5s;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  padding: 10px;
+}
+
+
+
 .containerOverlap {
   display: flex;
   flex-direction: column;
@@ -88,8 +146,8 @@
   height: 350px;
   width: 400px;
   position: relative;
-  top: 0%;
-  left: 50%;
+  top: 20%;
+  left: 0;
   background-color: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 25px;
@@ -103,6 +161,7 @@
   z-index: 1;
 }
 
+
 .containerOverlap p {
   font-family: 'Roboto';
   font-size: 25px;
@@ -110,6 +169,7 @@
 
 .container h3 {
   margin-top: 0;
+  width: auto;
 }
 
             input, textarea {
@@ -129,11 +189,14 @@
                 background-blend-mode: overlay;
                 box-sizing: border-box;
             }
-            button {
+            .send {
                 background: #000;
                 color: #fff;
                 border: none;
-                width: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
                 padding: 5px 20px;
                 font-family: 'Poppins';
                 font-size: 15px;
@@ -155,9 +218,10 @@
             }
 
             .container.flip {
-                position: relative;
-                top: 30%;
-                left: 5%;
+                position: absolute;
+                width: 400px;
+                top: 10%;
+                left: 0%;
                 transform-origin: 50% 50%;
                 transform: rotateY(360deg);
                 visibility: hidden;
@@ -171,8 +235,8 @@
                 height: 350px;
                 width: 400px;
                 position: relative;
-                top: -20%;
-                left: 5%;
+                top: 10%;
+                left: 0%;
                 transform-origin: 50% 50%;
                 background-color: rgba(255, 255, 255, 0.15);
                 border: 1px solid rgba(255, 255, 255, 0.15);
@@ -194,28 +258,6 @@
               left: 36%;
                 }
 
-.outside {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 30px;
-    font-size: 20px;
-    position: relative;
-    width: 100px;
-    font-family: Oswald;
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 5px;
-    padding: 2px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur(10px) saturate(150%);
-    -webkit-backdrop-filter: blur(5px) saturate(150%);
-    background-blend-mode: overlay;
-    visibility: visible;
-}
 
          
                 @media (max-width: 768px) {
@@ -223,12 +265,12 @@
   .containerOverlap {
     width: 90%;
     height: auto;
-    padding: 20px;
+    padding: 10px;
   }
-  input, textarea, button {
+  input, textarea, .send {
     font-size: 54px;
   }
-  button {
+  .send {
     width: 100%;
   }
   h3 {
@@ -241,28 +283,40 @@
 }
 
 @media (max-width: 768px) { 
+  .container h3 {
+  margin-top: 30px;
+  width: 80vw;
+}
+
+.back-button {
+  width: 90px;
+  padding: 10px;
+  top: 5%;
+  left: -2%;
+}
+
   body { 
     font-size: 36px;
     width: 100vw;
-    height: 100vh
-    padding: 10px;
-    margin: 10px;
+    height: 100vh;
+    margin: 0;
     background-size: auto;
     background-position-x: 44%;
     background-position-y: 20%;
        }
 
-input, textarea, button {
+input, textarea, .send {
                 font-size: 16px;
                 padding: 8px;
                         }
 
 .container {
-  width: 80vw;
+  width: auto;
   height: 50vh;
-  position: relative;
   left: auto;
-  top: auto;
+  top: 20%;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .containerOverlap {
   width: 80vw;
@@ -270,17 +324,20 @@ input, textarea, button {
   left: auto;
 }
 .container.flip {
-  width: 80vw;
-  position: absolute;
-  top: 23%;
-  left: 5%;
+    width: 78vw;
+    height: 48vh;
+    position: absolute;
+    top: 20%;
+    left: auto;
 }
 .containerOverlap.flip {
   width: 80vw;
   height: 50vh;
   position: relative;
   left: auto;
-  top: auto;
+  top: 20%;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 img {
               width: 20%;
@@ -292,24 +349,36 @@ img {
   font-family: 'Roboto';
   font-size: 20px;
 }
-}}
+
+}
+
+@media (max-width: 278px) {
+  .container h3 {
+    margin-top: 40px;
+  width: 80vw;
+  font-size: 20px;
+  }
+  .container {
+    height: 55vh;
+    padding: 5px
+  }
+
+
+
+}
          
         </style>
     </head>
     <body>
-
-            <div class="outside"><span class="material-symbols-outlined">
-keyboard_backspace
-            </span>
-            <h4>Back</h4>
-            </div>
+      <div class="parent">
+        <a href="index.html"><div class="back-button"><i class="material-symbols-outlined">keyboard_backspace</i>Back</div></a>
         <div class="container">
             <form onsubmit="sendEmail(); reset(); return false;">
                 <h3>ADD YOUR FACT</h3>
                 <input type="text" id="name" placeholder="Your name" required>
                 <input type="email" id="emailId" placeholder="Email id" required>
                 <textarea id="fact" rows="4" placeholder="Share your knowledge here"></textarea>
-                <button type="submit">Send</button>
+                <button class="send" type="submit">Send</button>
              </form>
         </div>
 
@@ -317,7 +386,7 @@ keyboard_backspace
           <h3><img src="tick.png"></h3>
           <p>Thank you for sharing! The admin will check and add the fact with your name as credit.</p>
         </div>
-
+      </div>
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script>
             function sendEmail() {
