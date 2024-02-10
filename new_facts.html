@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+  <title>FnB Facts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Protest+Strike&display=swap" rel="stylesheet">  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Oswald:wght@300&family=Protest+Strike&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-image: url(bacardi.jpg);
+  background-size: auto;
+  background-position-x: 44%;
+  background-position-y: 20%;
+  background-color: #f5f5f5;
+  margin: 20px;
+}
+
+.fact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: auto;
+    flex-direction: row;
+    position: relative;
+}
+
+#fact-box-container {
+  position: relative;
+  width: 100%;
+}
+
+#fact-box {
+  height: 200px; /* Set a fixed height */
+  width: 500px;
+  white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Oswald';
+  font-size: 20px;
+  padding-top: 0px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(100px) saturate(350%);
+  -webkit-backdrop-filter: blur(15px) saturate(150%);
+  background-blend-mode: overlay;
+  overflow-y: auto; /* Enable scrolling */
+  scrollbar-width: 10px;
+}
+#fact-box::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar track */
+}
+#fact-box::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+#fact-box::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#fact-box::-webkit-scrollbar-button {
+  display: flex;
+}
+
+.back-button {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    flex-direction: row;
+                    width: auto;
+                    top: 5%;
+                    left: 0%;
+                    background: rgba(255, 255, 255, 0.15);
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    border-radius: 8px;
+                    padding: 10px 20px;
+                    color: #fff;
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 15px;
+                    backdrop-filter: blur(100px) saturate(150%);
+                    -webkit-backdrop-filter: blur(50px) saturate(150%);
+                    background-blend-mode: overlay;
+                    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                    cursor: pointer;
+                    transition: transform 0.3s ease-out;
+                    gap: 5px;
+                          }
+
+.back-button:hover {
+  transform: translateY(-2px);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+
+p a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.displayed-fact {
+  line-height: 1.5;
+  word-wrap: break-word;
+  font-family: 'Oswald';
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+h2 {
+  color: #fff;
+  font-family: 'Protest Strike' !important;
+  font-size: 50px;
+  letter-spacing: 0.1cap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.container1{
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+@media (max-width: 768px) {
+
+    body { 
+    margin: 0;
+    background-size: auto;
+    background-position-x: 44%;
+    background-position-y: 20%;
+       }
+
+  #fact-box {
+  width: 60vw;
+  height: 30vh;
+  margin-right: 30px;
+    }
+
+#fact-box::-webkit-scrollbar-button {
+  display: block;
+}
+      h2 {
+        font-size: 40px;
+      }
+      #displayed-fact {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.back-button {
+  width: 90px;
+  padding: 10px;
+  top: 5%;
+  left: 0%;
+}
+
+}
+@media (max-width: 278px) {
+#fact-box {
+  margin-right: 30px;
+}
+
+}
+
+
+    </style>
+</head>
+<body>
+  <h2>New Facts</h2>
+  <div class="fact-container">
+    <a href="index.html"><div class="back-button"><i class="material-symbols-outlined">keyboard_backspace</i>Back</div></a>
+    <div class="container1">
+    <div id="fact-box">
+      <p class="displayed-fact">Alcohol starts vaping at the temperature of 78°C.
+
+	    Patent still is also known as Continuous Still or Coffey Still.
+
+	    Alcoholic Wash: It is a fermented liquid used in distillation.
+        
+	    Aftershots: It is the last part of distillate which has impurities and fusel oil.</p>
+    </div>
+    
+  </div>
+    </div>
+
+</body>
+</html>
