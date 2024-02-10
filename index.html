@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 <style>
 body {
@@ -130,7 +131,9 @@ button:hover {
       flex-direction: row-reverse;
       align-items: flex-start;
 }
-#addfact {
+#sidebutton {
+  display: inline-flex;
+  justify-content: center;
   background-color: rgba(138, 138, 138, 0.15);
   background: none;
   margin-right: 10px;
@@ -157,6 +160,11 @@ button:hover {
 .tooltip {
   position: relative;
   display: inline-block;
+}
+
+.tooltipcontainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .tooltip .tooltiptext {
@@ -204,13 +212,15 @@ button:hover {
     top: auto;
     bottom: 20px;
     font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 15px;
   }
   #fact-box {
   width: 60vw;
   height: 30vh;
-  margin-right: 50px;
+  margin-right: 30px;
     }
-#addfact {
+#sidebutton {
   margin-right: 5px;
   border-radius: 10px;
   padding: 5px;
@@ -262,8 +272,14 @@ button:hover {
   visibility: visible;
   opacity: 1;
 }
-
-
+}
+@media (max-width: 278px) {
+  .tooltipcontainer {
+  margin-left: 20px;
+}
+#fact-box {
+  margin-right: 30px;
+}
 
 }
 
@@ -277,12 +293,20 @@ button:hover {
     <div id="fact-box">
       <p class="displayed-fact"></p>
     </div>
+    <div class="tooltipcontainer" id="ttcont">
     <div class="tooltip" id="tooltip">
       <span class="tooltiptext">Add Fact</span>
     <a href="contact.html">
-      <button id="addfact"><i class="material-symbols-outlined">ADD</i></button>
+      <button id="sidebutton"><i class="material-symbols-outlined">ADD</i></button>
     </a>
     </div>
+    <div class="tooltip" id="tooltip">
+      <span class="tooltiptext">New Facts</span>
+    <a href="new_facts.html">
+      <button id="sidebutton"><i class="material-symbols-outlined">new_releases</i></button>
+    </a>
+    </div>
+  </div>
     </div>
     <button id="shuffle-button">Have A Drink</button>
   </div>
@@ -325,13 +349,23 @@ button:hover {
     ];
 
     function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    if (i !== j) {
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
     }
+  }
+  // Move the last element to a random position with a bias towards the beginning
+  const lastIndex = array.length - 1;
+  const swapIndex = Math.floor(Math.random() * (lastIndex + 1));
+  if (swapIndex !== lastIndex) {
+    const temp = array[lastIndex];
+    array[lastIndex] = array[swapIndex];
+    array[swapIndex] = temp;
+  }
+}
 
     function displayRandomFact() {
   shuffleArray(facts);
