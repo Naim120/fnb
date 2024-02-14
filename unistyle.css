@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #c4b7a5 50%, #d0c5b1 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Protest Strike';
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+}
+.container {
+    width: fit-content;
+    padding: 15px;
+    height: auto;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.wine {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+#wine {
+    width: 10vw;
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.6));
+    transition: transform 1s ease;
+}
+#wine:hover {
+    transform: rotate(-13deg);
+}
+.whisky {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+#whisky {
+    width: 7vw;
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.6));
+    transition: transform 0.8s ease;
+}
+#whisky:hover {
+    transform: rotate(3.1deg);
+}
+.vodka {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+#vodka {
+    width: 8.5vw;
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.6));
+    transition: transform 0.8s ease;
+}
+#vodka:hover {
+    transform: rotate(-14deg);
+}
+.gin {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+#gin {
+    width: 7vw;
+    transform: rotate(-2deg);
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.6));
+    transition: transform 0.8s ease;
+}
+#gin:hover {
+    transform: rotate(0deg);
+}
+.rum {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+#rum {
+    width: 8vw;
+    transform: rotate(5deg);
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.6));
+    transition: transform 0.8s ease;
+}
+#rum:hover {
+    transform: rotate(0deg);
+}
+.tequila {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+#tequila {
+    width: 6vw;
+    transform: rotate(-7deg);
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.6));
+    transition: transform 0.8s ease;
+}
+#tequila:hover {
+    transform: rotate(0deg);
+}
+@media (max-width:768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    h1 {
+        font-size: 40px;
+    }
+
+    #wine {
+        width: 22vw;
+    }
+    #whisky {
+        width: 15vw;
+    }
+    #vodka {
+        width: 18vw;
+    }
+    #gin {
+        width: 16vw;
+    }
+    #rum {
+        width: 18vw;
+    }
+    #tequila {
+        width: 12vw;
+    }
+}
