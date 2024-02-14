@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             wineBottle.style.transform = 'translateX(15vw) scale(10.5)'
         } else {
             // Add the zoom effect using CSS for non-mobile devices
-            wineBottle.style.transform = 'translateX(30vw) scale(10.5)'
+            wineBottle.style.transform = 'translateX(30vw) scale(20.5)'
             
         }
         wineBottle.style.transition = 'transform 1s ease'
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 whiskyBottle.style.transform = 'translateX(0vw) scale(10.5)'
             } else {
                 // Add the zoom effect using CSS for non-mobile devices
-                whiskyBottle.style.transform = 'translateX(30vw) scale(10.5)'
+                whiskyBottle.style.transform = 'translateX(20vw) scale(20.5)'
                 
             }
             whiskyBottle.style.transition = 'transform 1s ease'
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 vodkaBottle.style.transform = 'translateX(-35vw) scale(10.5)'
             } else {
                 // Add the zoom effect using CSS for non-mobile devices
-                vodkaBottle.style.transform = 'translateX(30vw) scale(10.5)'
+                vodkaBottle.style.transform = 'translateX(0vw) scale(20.5)'
                 
             }
             vodkaBottle.style.transition = 'transform 1s ease'
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ginBottle.style.transform = 'translate(25vw, -30vw) scale(10.5)'
             } else {
                 // Add the zoom effect using CSS for non-mobile devices
-                ginBottle.style.transform = 'translateX(30vw) scale(10.5)'
+                ginBottle.style.transform = 'translateX(-10vw) scale(20.5)'
                 
             }
             ginBottle.style.transition = 'transform 1s ease'
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 rumBottle.style.transform = 'translate(-10vw, -50vw) scale(10.5)'
             } else {
                 // Add the zoom effect using CSS for non-mobile devices
-                rumBottle.style.transform = 'translateX(30vw) scale(10.5)'
+                rumBottle.style.transform = 'translateX(-20vw) scale(20.5)'
                 
             }
             rumBottle.style.transition = 'transform 1s ease'
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tequilaBottle.style.transform = 'translate(-30vw, -70vw) scale(10.5)'
             } else {
                 // Add the zoom effect using CSS for non-mobile devices
-                tequilaBottle.style.transform = 'translateX(30vw) scale(10.5)'
+                tequilaBottle.style.transform = 'translateX(-30vw) scale(20.5)'
                 
             }
             tequilaBottle.style.transition = 'transform 1s ease'
