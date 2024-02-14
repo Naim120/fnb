@@ -79,5 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     });
 
+     const tequilaBottle = document.getElementById('tequila-bottle')
+
+    tequilaBottle.addEventListener('click', () => {
+        // Add the zoom effect using CSS
+        tequilaBottle.style.transform = 'scale(5.5)'
+        tequilaBottle.style.transition = 'transform 1s ease'
+        tequilaBottle.style.zIndex = '1'
+        // Change the URL without causing a full page reload
+        history.pushState({}, '', 'tequila.html')
+
+        // Redirect to the new page after a short delay
+        setTimeout(() => {
+            window.location.href = 'tequila.html'
+        }, 1000);
+    });
 
 });
